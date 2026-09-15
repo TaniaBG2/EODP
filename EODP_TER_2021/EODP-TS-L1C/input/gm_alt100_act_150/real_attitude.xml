@@ -1,0 +1,736 @@
+<?xml version="1.0"?>
+<Earth_Observation_File xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://eop-cfi.esa.int/CFI " xmlns="http://eop-cfi.esa.int/CFI">
+  <Earth_Observation_Header>
+    <Fixed_Header>
+      <File_Name>real_attitude</File_Name>
+      <File_Description>Predicted Attitude File</File_Description>
+      <Notes/>
+      <Mission>EODP</Mission>
+      <File_Class>Attitude</File_Class>
+      <File_Type>          </File_Type>
+      <Validity_Period>
+        <Validity_Start>UTC=2000-01-01T00:00:00</Validity_Start>
+        <Validity_Stop>UTC=2999-09-01-01T00:00:00</Validity_Stop>
+      </Validity_Period>
+      <File_Version>0001</File_Version>
+      <EOFFS_Version>3.0</EOFFS_Version>
+      <Source>
+        <System/>
+        <Creator>EXPLORER_GEN_FILES: xg_gen_pof</Creator>
+        <Creator_Version>1.0</Creator_Version>
+        <Creation_Date>UTC=2000-01-01T00:00:00</Creation_Date>
+      </Source>
+    </Fixed_Header>
+    <Variable_Header/>
+  </Earth_Observation_Header>
+  <Data_Block type="xml">
+    <Attitude_File_Type>Instr_Attitude</Attitude_File_Type>
+    <Attitude_Data_Type>Quaternions</Attitude_Data_Type>
+    <Max_Gap unit="s">0.010080</Max_Gap>
+    <Quaternion_Data>
+      <Reference_Frame>EARTH_FIXED</Reference_Frame>
+      <List_of_Quaternions count="100">
+        <Quaternions>
+          <Time ref="UT1">UT1=2019-09-14T10:36:13.315206</Time>
+          <Q1>0.291097714</Q1>
+          <Q2>0.393831123</Q2>
+          <Q3>0.562285808</Q3>
+          <Q4>0.666328626</Q4>
+        </Quaternions>
+        <Quaternions>
+          <Time ref="UT1">UT1=2019-09-14T10:36:13.321926</Time>
+          <Q1>0.291099977</Q1>
+          <Q2>0.393833195</Q2>
+          <Q3>0.562284242</Q3>
+          <Q4>0.666327734</Q4>
+        </Quaternions>
+        <Quaternions>
+          <Time ref="UT1">UT1=2019-09-14T10:36:13.328646</Time>
+          <Q1>0.291102241</Q1>
+          <Q2>0.393835268</Q2>
+          <Q3>0.562282676</Q3>
+          <Q4>0.666326842</Q4>
+        </Quaternions>
+        <Quaternions>
+          <Time ref="UT1">UT1=2019-09-14T10:36:13.335366</Time>
+          <Q1>0.291104504</Q1>
+          <Q2>0.393837340</Q2>
+          <Q3>0.562281109</Q3>
+          <Q4>0.666325950</Q4>
+        </Quaternions>
+        <Quaternions>
+          <Time ref="UT1">UT1=2019-09-14T10:36:13.342086</Time>
+          <Q1>0.291106768</Q1>
+          <Q2>0.393839412</Q2>
+          <Q3>0.562279543</Q3>
+          <Q4>0.666325058</Q4>
+        </Quaternions>
+        <Quaternions>
+          <Time ref="UT1">UT1=2019-09-14T10:36:13.348806</Time>
+          <Q1>0.291109032</Q1>
+          <Q2>0.393841485</Q2>
+          <Q3>0.562277977</Q3>
+          <Q4>0.666324166</Q4>
+        </Quaternions>
+        <Quaternions>
+          <Time ref="UT1">UT1=2019-09-14T10:36:13.355526</Time>
+          <Q1>0.291111295</Q1>
+          <Q2>0.393843557</Q2>
+          <Q3>0.562276410</Q3>
+          <Q4>0.666323274</Q4>
+        </Quaternions>
+        <Quaternions>
+          <Time ref="UT1">UT1=2019-09-14T10:36:13.362246</Time>
+          <Q1>0.291113559</Q1>
+          <Q2>0.393845629</Q2>
+          <Q3>0.562274844</Q3>
+          <Q4>0.666322382</Q4>
+        </Quaternions>
+        <Quaternions>
+          <Time ref="UT1">UT1=2019-09-14T10:36:13.368966</Time>
+          <Q1>0.291115822</Q1>
+          <Q2>0.393847702</Q2>
+          <Q3>0.562273278</Q3>
+          <Q4>0.666321489</Q4>
+        </Quaternions>
+        <Quaternions>
+          <Time ref="UT1">UT1=2019-09-14T10:36:13.375686</Time>
+          <Q1>0.291118086</Q1>
+          <Q2>0.393849774</Q2>
+          <Q3>0.562271711</Q3>
+          <Q4>0.666320597</Q4>
+        </Quaternions>
+        <Quaternions>
+          <Time ref="UT1">UT1=2019-09-14T10:36:13.382406</Time>
+          <Q1>0.291120349</Q1>
+          <Q2>0.393851846</Q2>
+          <Q3>0.562270145</Q3>
+          <Q4>0.666319705</Q4>
+        </Quaternions>
+        <Quaternions>
+          <Time ref="UT1">UT1=2019-09-14T10:36:13.389126</Time>
+          <Q1>0.291122613</Q1>
+          <Q2>0.393853919</Q2>
+          <Q3>0.562268579</Q3>
+          <Q4>0.666318813</Q4>
+        </Quaternions>
+        <Quaternions>
+          <Time ref="UT1">UT1=2019-09-14T10:36:13.395846</Time>
+          <Q1>0.291124876</Q1>
+          <Q2>0.393855991</Q2>
+          <Q3>0.562267012</Q3>
+          <Q4>0.666317921</Q4>
+        </Quaternions>
+        <Quaternions>
+          <Time ref="UT1">UT1=2019-09-14T10:36:13.402566</Time>
+          <Q1>0.291127140</Q1>
+          <Q2>0.393858063</Q2>
+          <Q3>0.562265446</Q3>
+          <Q4>0.666317029</Q4>
+        </Quaternions>
+        <Quaternions>
+          <Time ref="UT1">UT1=2019-09-14T10:36:13.409286</Time>
+          <Q1>0.291129403</Q1>
+          <Q2>0.393860135</Q2>
+          <Q3>0.562263880</Q3>
+          <Q4>0.666316137</Q4>
+        </Quaternions>
+        <Quaternions>
+          <Time ref="UT1">UT1=2019-09-14T10:36:13.416006</Time>
+          <Q1>0.291131667</Q1>
+          <Q2>0.393862208</Q2>
+          <Q3>0.562262313</Q3>
+          <Q4>0.666315245</Q4>
+        </Quaternions>
+        <Quaternions>
+          <Time ref="UT1">UT1=2019-09-14T10:36:13.422726</Time>
+          <Q1>0.291133930</Q1>
+          <Q2>0.393864280</Q2>
+          <Q3>0.562260747</Q3>
+          <Q4>0.666314353</Q4>
+        </Quaternions>
+        <Quaternions>
+          <Time ref="UT1">UT1=2019-09-14T10:36:13.429446</Time>
+          <Q1>0.291136193</Q1>
+          <Q2>0.393866352</Q2>
+          <Q3>0.562259180</Q3>
+          <Q4>0.666313460</Q4>
+        </Quaternions>
+        <Quaternions>
+          <Time ref="UT1">UT1=2019-09-14T10:36:13.436166</Time>
+          <Q1>0.291138457</Q1>
+          <Q2>0.393868424</Q2>
+          <Q3>0.562257614</Q3>
+          <Q4>0.666312568</Q4>
+        </Quaternions>
+        <Quaternions>
+          <Time ref="UT1">UT1=2019-09-14T10:36:13.442886</Time>
+          <Q1>0.291140720</Q1>
+          <Q2>0.393870497</Q2>
+          <Q3>0.562256048</Q3>
+          <Q4>0.666311676</Q4>
+        </Quaternions>
+        <Quaternions>
+          <Time ref="UT1">UT1=2019-09-14T10:36:13.449606</Time>
+          <Q1>0.291142984</Q1>
+          <Q2>0.393872569</Q2>
+          <Q3>0.562254481</Q3>
+          <Q4>0.666310784</Q4>
+        </Quaternions>
+        <Quaternions>
+          <Time ref="UT1">UT1=2019-09-14T10:36:13.456326</Time>
+          <Q1>0.291145247</Q1>
+          <Q2>0.393874641</Q2>
+          <Q3>0.562252915</Q3>
+          <Q4>0.666309892</Q4>
+        </Quaternions>
+        <Quaternions>
+          <Time ref="UT1">UT1=2019-09-14T10:36:13.463046</Time>
+          <Q1>0.291147511</Q1>
+          <Q2>0.393876713</Q2>
+          <Q3>0.562251348</Q3>
+          <Q4>0.666308999</Q4>
+        </Quaternions>
+        <Quaternions>
+          <Time ref="UT1">UT1=2019-09-14T10:36:13.469766</Time>
+          <Q1>0.291149774</Q1>
+          <Q2>0.393878786</Q2>
+          <Q3>0.562249782</Q3>
+          <Q4>0.666308107</Q4>
+        </Quaternions>
+        <Quaternions>
+          <Time ref="UT1">UT1=2019-09-14T10:36:13.476486</Time>
+          <Q1>0.291152038</Q1>
+          <Q2>0.393880858</Q2>
+          <Q3>0.562248216</Q3>
+          <Q4>0.666307215</Q4>
+        </Quaternions>
+        <Quaternions>
+          <Time ref="UT1">UT1=2019-09-14T10:36:13.483206</Time>
+          <Q1>0.291154301</Q1>
+          <Q2>0.393882930</Q2>
+          <Q3>0.562246649</Q3>
+          <Q4>0.666306323</Q4>
+        </Quaternions>
+        <Quaternions>
+          <Time ref="UT1">UT1=2019-09-14T10:36:13.489926</Time>
+          <Q1>0.291156565</Q1>
+          <Q2>0.393885002</Q2>
+          <Q3>0.562245083</Q3>
+          <Q4>0.666305430</Q4>
+        </Quaternions>
+        <Quaternions>
+          <Time ref="UT1">UT1=2019-09-14T10:36:13.496646</Time>
+          <Q1>0.291158828</Q1>
+          <Q2>0.393887075</Q2>
+          <Q3>0.562243516</Q3>
+          <Q4>0.666304538</Q4>
+        </Quaternions>
+        <Quaternions>
+          <Time ref="UT1">UT1=2019-09-14T10:36:13.503366</Time>
+          <Q1>0.291161092</Q1>
+          <Q2>0.393889147</Q2>
+          <Q3>0.562241950</Q3>
+          <Q4>0.666303646</Q4>
+        </Quaternions>
+        <Quaternions>
+          <Time ref="UT1">UT1=2019-09-14T10:36:13.510086</Time>
+          <Q1>0.291163355</Q1>
+          <Q2>0.393891219</Q2>
+          <Q3>0.562240383</Q3>
+          <Q4>0.666302754</Q4>
+        </Quaternions>
+        <Quaternions>
+          <Time ref="UT1">UT1=2019-09-14T10:36:13.516806</Time>
+          <Q1>0.291165619</Q1>
+          <Q2>0.393893291</Q2>
+          <Q3>0.562238817</Q3>
+          <Q4>0.666301861</Q4>
+        </Quaternions>
+        <Quaternions>
+          <Time ref="UT1">UT1=2019-09-14T10:36:13.523526</Time>
+          <Q1>0.291167882</Q1>
+          <Q2>0.393895363</Q2>
+          <Q3>0.562237251</Q3>
+          <Q4>0.666300969</Q4>
+        </Quaternions>
+        <Quaternions>
+          <Time ref="UT1">UT1=2019-09-14T10:36:13.530246</Time>
+          <Q1>0.291170145</Q1>
+          <Q2>0.393897435</Q2>
+          <Q3>0.562235684</Q3>
+          <Q4>0.666300077</Q4>
+        </Quaternions>
+        <Quaternions>
+          <Time ref="UT1">UT1=2019-09-14T10:36:13.536966</Time>
+          <Q1>0.291172409</Q1>
+          <Q2>0.393899508</Q2>
+          <Q3>0.562234118</Q3>
+          <Q4>0.666299184</Q4>
+        </Quaternions>
+        <Quaternions>
+          <Time ref="UT1">UT1=2019-09-14T10:36:13.543686</Time>
+          <Q1>0.291174672</Q1>
+          <Q2>0.393901580</Q2>
+          <Q3>0.562232551</Q3>
+          <Q4>0.666298292</Q4>
+        </Quaternions>
+        <Quaternions>
+          <Time ref="UT1">UT1=2019-09-14T10:36:13.550406</Time>
+          <Q1>0.291176936</Q1>
+          <Q2>0.393903652</Q2>
+          <Q3>0.562230985</Q3>
+          <Q4>0.666297400</Q4>
+        </Quaternions>
+        <Quaternions>
+          <Time ref="UT1">UT1=2019-09-14T10:36:13.557126</Time>
+          <Q1>0.291179199</Q1>
+          <Q2>0.393905724</Q2>
+          <Q3>0.562229418</Q3>
+          <Q4>0.666296507</Q4>
+        </Quaternions>
+        <Quaternions>
+          <Time ref="UT1">UT1=2019-09-14T10:36:13.563846</Time>
+          <Q1>0.291181463</Q1>
+          <Q2>0.393907796</Q2>
+          <Q3>0.562227852</Q3>
+          <Q4>0.666295615</Q4>
+        </Quaternions>
+        <Quaternions>
+          <Time ref="UT1">UT1=2019-09-14T10:36:13.570566</Time>
+          <Q1>0.291183726</Q1>
+          <Q2>0.393909868</Q2>
+          <Q3>0.562226285</Q3>
+          <Q4>0.666294723</Q4>
+        </Quaternions>
+        <Quaternions>
+          <Time ref="UT1">UT1=2019-09-14T10:36:13.577286</Time>
+          <Q1>0.291185990</Q1>
+          <Q2>0.393911941</Q2>
+          <Q3>0.562224719</Q3>
+          <Q4>0.666293830</Q4>
+        </Quaternions>
+        <Quaternions>
+          <Time ref="UT1">UT1=2019-09-14T10:36:13.584006</Time>
+          <Q1>0.291188253</Q1>
+          <Q2>0.393914013</Q2>
+          <Q3>0.562223152</Q3>
+          <Q4>0.666292938</Q4>
+        </Quaternions>
+        <Quaternions>
+          <Time ref="UT1">UT1=2019-09-14T10:36:13.590726</Time>
+          <Q1>0.291190516</Q1>
+          <Q2>0.393916085</Q2>
+          <Q3>0.562221586</Q3>
+          <Q4>0.666292045</Q4>
+        </Quaternions>
+        <Quaternions>
+          <Time ref="UT1">UT1=2019-09-14T10:36:13.597446</Time>
+          <Q1>0.291192780</Q1>
+          <Q2>0.393918157</Q2>
+          <Q3>0.562220019</Q3>
+          <Q4>0.666291153</Q4>
+        </Quaternions>
+        <Quaternions>
+          <Time ref="UT1">UT1=2019-09-14T10:36:13.604166</Time>
+          <Q1>0.291195043</Q1>
+          <Q2>0.393920229</Q2>
+          <Q3>0.562218453</Q3>
+          <Q4>0.666290261</Q4>
+        </Quaternions>
+        <Quaternions>
+          <Time ref="UT1">UT1=2019-09-14T10:36:13.610886</Time>
+          <Q1>0.291197307</Q1>
+          <Q2>0.393922301</Q2>
+          <Q3>0.562216886</Q3>
+          <Q4>0.666289368</Q4>
+        </Quaternions>
+        <Quaternions>
+          <Time ref="UT1">UT1=2019-09-14T10:36:13.617606</Time>
+          <Q1>0.291199570</Q1>
+          <Q2>0.393924373</Q2>
+          <Q3>0.562215320</Q3>
+          <Q4>0.666288476</Q4>
+        </Quaternions>
+        <Quaternions>
+          <Time ref="UT1">UT1=2019-09-14T10:36:13.624326</Time>
+          <Q1>0.291201833</Q1>
+          <Q2>0.393926445</Q2>
+          <Q3>0.562213753</Q3>
+          <Q4>0.666287583</Q4>
+        </Quaternions>
+        <Quaternions>
+          <Time ref="UT1">UT1=2019-09-14T10:36:13.631046</Time>
+          <Q1>0.291204097</Q1>
+          <Q2>0.393928517</Q2>
+          <Q3>0.562212187</Q3>
+          <Q4>0.666286691</Q4>
+        </Quaternions>
+        <Quaternions>
+          <Time ref="UT1">UT1=2019-09-14T10:36:13.637766</Time>
+          <Q1>0.291206360</Q1>
+          <Q2>0.393930590</Q2>
+          <Q3>0.562210620</Q3>
+          <Q4>0.666285798</Q4>
+        </Quaternions>
+        <Quaternions>
+          <Time ref="UT1">UT1=2019-09-14T10:36:13.644486</Time>
+          <Q1>0.291208624</Q1>
+          <Q2>0.393932662</Q2>
+          <Q3>0.562209053</Q3>
+          <Q4>0.666284906</Q4>
+        </Quaternions>
+        <Quaternions>
+          <Time ref="UT1">UT1=2019-09-14T10:36:13.651206</Time>
+          <Q1>0.291210887</Q1>
+          <Q2>0.393934734</Q2>
+          <Q3>0.562207487</Q3>
+          <Q4>0.666284013</Q4>
+        </Quaternions>
+        <Quaternions>
+          <Time ref="UT1">UT1=2019-09-14T10:36:13.657926</Time>
+          <Q1>0.291213151</Q1>
+          <Q2>0.393936806</Q2>
+          <Q3>0.562205920</Q3>
+          <Q4>0.666283121</Q4>
+        </Quaternions>
+        <Quaternions>
+          <Time ref="UT1">UT1=2019-09-14T10:36:13.664646</Time>
+          <Q1>0.291215414</Q1>
+          <Q2>0.393938878</Q2>
+          <Q3>0.562204354</Q3>
+          <Q4>0.666282228</Q4>
+        </Quaternions>
+        <Quaternions>
+          <Time ref="UT1">UT1=2019-09-14T10:36:13.671366</Time>
+          <Q1>0.291217677</Q1>
+          <Q2>0.393940950</Q2>
+          <Q3>0.562202787</Q3>
+          <Q4>0.666281336</Q4>
+        </Quaternions>
+        <Quaternions>
+          <Time ref="UT1">UT1=2019-09-14T10:36:13.678086</Time>
+          <Q1>0.291219941</Q1>
+          <Q2>0.393943022</Q2>
+          <Q3>0.562201221</Q3>
+          <Q4>0.666280443</Q4>
+        </Quaternions>
+        <Quaternions>
+          <Time ref="UT1">UT1=2019-09-14T10:36:13.684806</Time>
+          <Q1>0.291222204</Q1>
+          <Q2>0.393945094</Q2>
+          <Q3>0.562199654</Q3>
+          <Q4>0.666279551</Q4>
+        </Quaternions>
+        <Quaternions>
+          <Time ref="UT1">UT1=2019-09-14T10:36:13.691526</Time>
+          <Q1>0.291224467</Q1>
+          <Q2>0.393947166</Q2>
+          <Q3>0.562198087</Q3>
+          <Q4>0.666278658</Q4>
+        </Quaternions>
+        <Quaternions>
+          <Time ref="UT1">UT1=2019-09-14T10:36:13.698246</Time>
+          <Q1>0.291226731</Q1>
+          <Q2>0.393949238</Q2>
+          <Q3>0.562196521</Q3>
+          <Q4>0.666277766</Q4>
+        </Quaternions>
+        <Quaternions>
+          <Time ref="UT1">UT1=2019-09-14T10:36:13.704966</Time>
+          <Q1>0.291228994</Q1>
+          <Q2>0.393951310</Q2>
+          <Q3>0.562194954</Q3>
+          <Q4>0.666276873</Q4>
+        </Quaternions>
+        <Quaternions>
+          <Time ref="UT1">UT1=2019-09-14T10:36:13.711686</Time>
+          <Q1>0.291231258</Q1>
+          <Q2>0.393953382</Q2>
+          <Q3>0.562193388</Q3>
+          <Q4>0.666275980</Q4>
+        </Quaternions>
+        <Quaternions>
+          <Time ref="UT1">UT1=2019-09-14T10:36:13.718406</Time>
+          <Q1>0.291233521</Q1>
+          <Q2>0.393955454</Q2>
+          <Q3>0.562191821</Q3>
+          <Q4>0.666275088</Q4>
+        </Quaternions>
+        <Quaternions>
+          <Time ref="UT1">UT1=2019-09-14T10:36:13.725126</Time>
+          <Q1>0.291235784</Q1>
+          <Q2>0.393957526</Q2>
+          <Q3>0.562190255</Q3>
+          <Q4>0.666274195</Q4>
+        </Quaternions>
+        <Quaternions>
+          <Time ref="UT1">UT1=2019-09-14T10:36:13.731846</Time>
+          <Q1>0.291238048</Q1>
+          <Q2>0.393959598</Q2>
+          <Q3>0.562188688</Q3>
+          <Q4>0.666273303</Q4>
+        </Quaternions>
+        <Quaternions>
+          <Time ref="UT1">UT1=2019-09-14T10:36:13.738566</Time>
+          <Q1>0.291240311</Q1>
+          <Q2>0.393961670</Q2>
+          <Q3>0.562187121</Q3>
+          <Q4>0.666272410</Q4>
+        </Quaternions>
+        <Quaternions>
+          <Time ref="UT1">UT1=2019-09-14T10:36:13.745286</Time>
+          <Q1>0.291242575</Q1>
+          <Q2>0.393963742</Q2>
+          <Q3>0.562185555</Q3>
+          <Q4>0.666271517</Q4>
+        </Quaternions>
+        <Quaternions>
+          <Time ref="UT1">UT1=2019-09-14T10:36:13.752006</Time>
+          <Q1>0.291244838</Q1>
+          <Q2>0.393965814</Q2>
+          <Q3>0.562183988</Q3>
+          <Q4>0.666270625</Q4>
+        </Quaternions>
+        <Quaternions>
+          <Time ref="UT1">UT1=2019-09-14T10:36:13.758726</Time>
+          <Q1>0.291247101</Q1>
+          <Q2>0.393967886</Q2>
+          <Q3>0.562182421</Q3>
+          <Q4>0.666269732</Q4>
+        </Quaternions>
+        <Quaternions>
+          <Time ref="UT1">UT1=2019-09-14T10:36:13.765446</Time>
+          <Q1>0.291249365</Q1>
+          <Q2>0.393969958</Q2>
+          <Q3>0.562180855</Q3>
+          <Q4>0.666268839</Q4>
+        </Quaternions>
+        <Quaternions>
+          <Time ref="UT1">UT1=2019-09-14T10:36:13.772166</Time>
+          <Q1>0.291251628</Q1>
+          <Q2>0.393972030</Q2>
+          <Q3>0.562179288</Q3>
+          <Q4>0.666267947</Q4>
+        </Quaternions>
+        <Quaternions>
+          <Time ref="UT1">UT1=2019-09-14T10:36:13.778886</Time>
+          <Q1>0.291253891</Q1>
+          <Q2>0.393974102</Q2>
+          <Q3>0.562177721</Q3>
+          <Q4>0.666267054</Q4>
+        </Quaternions>
+        <Quaternions>
+          <Time ref="UT1">UT1=2019-09-14T10:36:13.785606</Time>
+          <Q1>0.291256155</Q1>
+          <Q2>0.393976174</Q2>
+          <Q3>0.562176155</Q3>
+          <Q4>0.666266161</Q4>
+        </Quaternions>
+        <Quaternions>
+          <Time ref="UT1">UT1=2019-09-14T10:36:13.792326</Time>
+          <Q1>0.291258418</Q1>
+          <Q2>0.393978246</Q2>
+          <Q3>0.562174588</Q3>
+          <Q4>0.666265269</Q4>
+        </Quaternions>
+        <Quaternions>
+          <Time ref="UT1">UT1=2019-09-14T10:36:13.799046</Time>
+          <Q1>0.291260681</Q1>
+          <Q2>0.393980318</Q2>
+          <Q3>0.562173021</Q3>
+          <Q4>0.666264376</Q4>
+        </Quaternions>
+        <Quaternions>
+          <Time ref="UT1">UT1=2019-09-14T10:36:13.805766</Time>
+          <Q1>0.291262945</Q1>
+          <Q2>0.393982390</Q2>
+          <Q3>0.562171455</Q3>
+          <Q4>0.666263483</Q4>
+        </Quaternions>
+        <Quaternions>
+          <Time ref="UT1">UT1=2019-09-14T10:36:13.812486</Time>
+          <Q1>0.291265208</Q1>
+          <Q2>0.393984462</Q2>
+          <Q3>0.562169888</Q3>
+          <Q4>0.666262590</Q4>
+        </Quaternions>
+        <Quaternions>
+          <Time ref="UT1">UT1=2019-09-14T10:36:13.819206</Time>
+          <Q1>0.291267471</Q1>
+          <Q2>0.393986534</Q2>
+          <Q3>0.562168321</Q3>
+          <Q4>0.666261698</Q4>
+        </Quaternions>
+        <Quaternions>
+          <Time ref="UT1">UT1=2019-09-14T10:36:13.825926</Time>
+          <Q1>0.291269735</Q1>
+          <Q2>0.393988606</Q2>
+          <Q3>0.562166755</Q3>
+          <Q4>0.666260805</Q4>
+        </Quaternions>
+        <Quaternions>
+          <Time ref="UT1">UT1=2019-09-14T10:36:13.832646</Time>
+          <Q1>0.291271998</Q1>
+          <Q2>0.393990678</Q2>
+          <Q3>0.562165188</Q3>
+          <Q4>0.666259912</Q4>
+        </Quaternions>
+        <Quaternions>
+          <Time ref="UT1">UT1=2019-09-14T10:36:13.839366</Time>
+          <Q1>0.291274261</Q1>
+          <Q2>0.393992750</Q2>
+          <Q3>0.562163621</Q3>
+          <Q4>0.666259019</Q4>
+        </Quaternions>
+        <Quaternions>
+          <Time ref="UT1">UT1=2019-09-14T10:36:13.846086</Time>
+          <Q1>0.291276525</Q1>
+          <Q2>0.393994821</Q2>
+          <Q3>0.562162055</Q3>
+          <Q4>0.666258127</Q4>
+        </Quaternions>
+        <Quaternions>
+          <Time ref="UT1">UT1=2019-09-14T10:36:13.852806</Time>
+          <Q1>0.291278788</Q1>
+          <Q2>0.393996893</Q2>
+          <Q3>0.562160488</Q3>
+          <Q4>0.666257234</Q4>
+        </Quaternions>
+        <Quaternions>
+          <Time ref="UT1">UT1=2019-09-14T10:36:13.859526</Time>
+          <Q1>0.291281051</Q1>
+          <Q2>0.393998965</Q2>
+          <Q3>0.562158921</Q3>
+          <Q4>0.666256341</Q4>
+        </Quaternions>
+        <Quaternions>
+          <Time ref="UT1">UT1=2019-09-14T10:36:13.866246</Time>
+          <Q1>0.291283315</Q1>
+          <Q2>0.394001037</Q2>
+          <Q3>0.562157354</Q3>
+          <Q4>0.666255448</Q4>
+        </Quaternions>
+        <Quaternions>
+          <Time ref="UT1">UT1=2019-09-14T10:36:13.872966</Time>
+          <Q1>0.291285578</Q1>
+          <Q2>0.394003109</Q2>
+          <Q3>0.562155788</Q3>
+          <Q4>0.666254555</Q4>
+        </Quaternions>
+        <Quaternions>
+          <Time ref="UT1">UT1=2019-09-14T10:36:13.879686</Time>
+          <Q1>0.291287841</Q1>
+          <Q2>0.394005181</Q2>
+          <Q3>0.562154221</Q3>
+          <Q4>0.666253662</Q4>
+        </Quaternions>
+        <Quaternions>
+          <Time ref="UT1">UT1=2019-09-14T10:36:13.886406</Time>
+          <Q1>0.291290105</Q1>
+          <Q2>0.394007253</Q2>
+          <Q3>0.562152654</Q3>
+          <Q4>0.666252770</Q4>
+        </Quaternions>
+        <Quaternions>
+          <Time ref="UT1">UT1=2019-09-14T10:36:13.893126</Time>
+          <Q1>0.291292368</Q1>
+          <Q2>0.394009325</Q2>
+          <Q3>0.562151087</Q3>
+          <Q4>0.666251877</Q4>
+        </Quaternions>
+        <Quaternions>
+          <Time ref="UT1">UT1=2019-09-14T10:36:13.899846</Time>
+          <Q1>0.291294631</Q1>
+          <Q2>0.394011397</Q2>
+          <Q3>0.562149521</Q3>
+          <Q4>0.666250984</Q4>
+        </Quaternions>
+        <Quaternions>
+          <Time ref="UT1">UT1=2019-09-14T10:36:13.906566</Time>
+          <Q1>0.291296895</Q1>
+          <Q2>0.394013468</Q2>
+          <Q3>0.562147954</Q3>
+          <Q4>0.666250091</Q4>
+        </Quaternions>
+        <Quaternions>
+          <Time ref="UT1">UT1=2019-09-14T10:36:13.913286</Time>
+          <Q1>0.291299158</Q1>
+          <Q2>0.394015540</Q2>
+          <Q3>0.562146387</Q3>
+          <Q4>0.666249198</Q4>
+        </Quaternions>
+        <Quaternions>
+          <Time ref="UT1">UT1=2019-09-14T10:36:13.920006</Time>
+          <Q1>0.291301421</Q1>
+          <Q2>0.394017612</Q2>
+          <Q3>0.562144820</Q3>
+          <Q4>0.666248305</Q4>
+        </Quaternions>
+        <Quaternions>
+          <Time ref="UT1">UT1=2019-09-14T10:36:13.926726</Time>
+          <Q1>0.291303685</Q1>
+          <Q2>0.394019684</Q2>
+          <Q3>0.562143254</Q3>
+          <Q4>0.666247412</Q4>
+        </Quaternions>
+        <Quaternions>
+          <Time ref="UT1">UT1=2019-09-14T10:36:13.933446</Time>
+          <Q1>0.291305948</Q1>
+          <Q2>0.394021756</Q2>
+          <Q3>0.562141687</Q3>
+          <Q4>0.666246519</Q4>
+        </Quaternions>
+        <Quaternions>
+          <Time ref="UT1">UT1=2019-09-14T10:36:13.940166</Time>
+          <Q1>0.291308211</Q1>
+          <Q2>0.394023828</Q2>
+          <Q3>0.562140120</Q3>
+          <Q4>0.666245626</Q4>
+        </Quaternions>
+        <Quaternions>
+          <Time ref="UT1">UT1=2019-09-14T10:36:13.946886</Time>
+          <Q1>0.291310475</Q1>
+          <Q2>0.394025899</Q2>
+          <Q3>0.562138553</Q3>
+          <Q4>0.666244733</Q4>
+        </Quaternions>
+        <Quaternions>
+          <Time ref="UT1">UT1=2019-09-14T10:36:13.953606</Time>
+          <Q1>0.291312738</Q1>
+          <Q2>0.394027971</Q2>
+          <Q3>0.562136987</Q3>
+          <Q4>0.666243841</Q4>
+        </Quaternions>
+        <Quaternions>
+          <Time ref="UT1">UT1=2019-09-14T10:36:13.960326</Time>
+          <Q1>0.291315001</Q1>
+          <Q2>0.394030043</Q2>
+          <Q3>0.562135420</Q3>
+          <Q4>0.666242948</Q4>
+        </Quaternions>
+        <Quaternions>
+          <Time ref="UT1">UT1=2019-09-14T10:36:13.967046</Time>
+          <Q1>0.291317264</Q1>
+          <Q2>0.394032115</Q2>
+          <Q3>0.562133853</Q3>
+          <Q4>0.666242055</Q4>
+        </Quaternions>
+        <Quaternions>
+          <Time ref="UT1">UT1=2019-09-14T10:36:13.973766</Time>
+          <Q1>0.291319528</Q1>
+          <Q2>0.394034187</Q2>
+          <Q3>0.562132286</Q3>
+          <Q4>0.666241162</Q4>
+        </Quaternions>
+        <Quaternions>
+          <Time ref="UT1">UT1=2019-09-14T10:36:13.980486</Time>
+          <Q1>0.291321791</Q1>
+          <Q2>0.394036258</Q2>
+          <Q3>0.562130719</Q3>
+          <Q4>0.666240269</Q4>
+        </Quaternions>
+      </List_of_Quaternions>
+    </Quaternion_Data>
+  </Data_Block>
+</Earth_Observation_File>
