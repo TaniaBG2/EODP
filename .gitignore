@@ -79,3 +79,7 @@ local.properties
 .pydevproject
 **/__pycache__/
 .idea/
+
+# Carpeta data
+.venv/
+EODP_TER_2021/
