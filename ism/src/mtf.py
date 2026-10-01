@@ -1,4 +1,7 @@
 from math import pi
+
+from scipy.signal import firwin_2d
+
 from config.ismConfig import ismConfig
 import numpy as np
 import math
@@ -101,6 +104,11 @@ class mtf:
 
         [fnAltxx, fnActxx] = np.meshgrid(fnAlt, fnAct, indexing='ij')  # Please use ‘ij’ indexing or you will get the transpose
         fn2D = np.sqrt(fnAltxx * fnAltxx + fnActxx * fnActxx)
+
+        fn2D
+        fr2D
+        fnAct
+        fnAlt
 
         return fn2D, fr2D, fnAct, fnAlt
 
