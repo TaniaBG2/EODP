@@ -142,7 +142,25 @@ class detectionPhase(initIsm):
         :return: toa in e- including bad & dead pixels
         """
         #TODO
-        toa[:, 5] = toa[:, 5] * (1 - bad_pix_red)
+        num_pixels_act = toa.shape[1]    # number of pixels in ACT direction
+
+        num_bad = int(bad_pix / 100 * num_pixels_act)    # number of bad pixels
+        num_dead = int(dead_pix / 100 * num_pixels_act)  # number of dead pixels
+
+        # dead pixels
+        if num_dead > 0:
+            step_dead = int(num_pixels_act / num_dead)
+            idx_dead = range(0, num_pixels_act, step_dead)
+            for idx in idx_dead:
+                toa[:, idx] = toa[:, idx] * (1 - dead_pix_red)
+                
+        # bad pixels
+        if num_bad > 0:
+            step_bad = int(num_pixels_act / num_bad)
+            idx_bad = range(5, num_pixels_act, step_bad)
+            for idx in idx_bad:
+                toa[:, idx] = toa[:, idx] * (1 - bad_pix_red)
+
         return toa
 
     def prnu(self, toa, kprnu):
