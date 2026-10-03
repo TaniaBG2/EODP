@@ -95,20 +95,27 @@ class mtf:
         :return fnAlt: 1D normalised frequencies 2D ALT (f/(1/w))
         """
         #TODO
-        fstepAlt = 1 / nlines / w       # fstepAlt: 333.333333
-        fstepAct = 1 / ncolumns / w     # fstepAct: 222.222222
+        cutoff = D / (lambd * focal)    # optical cut-off frequency
 
+        # frequency sampling
+        fstepAlt = 1 / nlines / w       # fstepAlt: 333.333333 [1/m]
+        fstepAct = 1 / ncolumns / w     # fstepAct: 222.222222 [1/m]
+
+        # 1D spatial frequencies
         eps = 1e-6
         fAlt = np.arange(-1 / (2 * w), 1 / (2 * w) - eps, fstepAlt)
         fAct = np.arange(-1 / (2 * w), 1 / (2 * w) - eps, fstepAct)
 
+        # normalised frequencies
+        fnAlt = fAlt / (1 / w)
+        fnAct = fAct / (1 / w)
+
+        # 2D normalised frequencies
         [fnAltxx, fnActxx] = np.meshgrid(fnAlt, fnAct, indexing='ij')  # Please use ‘ij’ indexing or you will get the transpose
         fn2D = np.sqrt(fnAltxx * fnAltxx + fnActxx * fnActxx)
 
-        fn2D
-        fr2D
-        fnAct
-        fnAlt
+        # 2D relative frequencies
+        fr2D = fn2D * (1/w) / cutoff
 
         return fn2D, fr2D, fnAct, fnAlt
 
