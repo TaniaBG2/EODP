@@ -105,6 +105,15 @@ class detectionPhase(initIsm):
         :return: Toa in photons
         """
         #TODO
+        toa_W = toa / 1000    # irradiance from mW/m2 to W/m2
+        E_in = toa_W * area_pix * tint    # incident energy on each pixel in tint [J]
+
+        h = self.constants.h_planck
+        c = self.constants.speed_light
+        E_photon = h * c / wv    # energy of each photon [J]
+
+        toa_ph = E_in / E_photon    # number of photons incident on each pixel in tint [ph]
+
         return toa_ph
 
     def phot2Electr(self, toa, QE):
@@ -115,6 +124,7 @@ class detectionPhase(initIsm):
         :return: toa in electrons
         """
         #TODO
+        self.ismConfig.FWC
         return toae
 
     def badDeadPixels(self, toa,bad_pix,dead_pix,bad_pix_red,dead_pix_red):
@@ -128,6 +138,7 @@ class detectionPhase(initIsm):
         :return: toa in e- including bad & dead pixels
         """
         #TODO
+        toa[:, 5] = toa[:, 5] * (1 - bad_pix_red)
         return toa
 
     def prnu(self, toa, kprnu):
@@ -138,6 +149,8 @@ class detectionPhase(initIsm):
         :return: TOA after adding PRNU [e-]
         """
         #TODO
+        np.random.standard_normal()
+        prnu_eff = np.random.normal(0, 1, toa.shape[1])  # Standard normal distribution
         return toa
 
 
