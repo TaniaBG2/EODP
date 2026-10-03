@@ -153,7 +153,7 @@ class detectionPhase(initIsm):
             idx_dead = range(0, num_pixels_act, step_dead)
             for idx in idx_dead:
                 toa[:, idx] = toa[:, idx] * (1 - dead_pix_red)
-                
+
         # bad pixels
         if num_bad > 0:
             step_bad = int(num_pixels_act / num_bad)
@@ -171,8 +171,15 @@ class detectionPhase(initIsm):
         :return: TOA after adding PRNU [e-]
         """
         #TODO
-        np.random.standard_normal()
-        prnu_eff = np.random.normal(0, 1, toa.shape[1])  # Standard normal distribution
+        #np.random.standard_normal(toa.shape[1]) is the same as the formula below
+        normal = np.random.normal(0, 1, toa.shape[1])  # Standard normal distribution
+
+        prnu_eff = normal * kprnu    # PRNU effect for each detector
+
+        # same PRNU for all acquisition
+        for act in range(toa.shape[1]):
+            toa[:, act] = toa[:, act] * (1 + prnu_eff[act])
+
         return toa
 
 
