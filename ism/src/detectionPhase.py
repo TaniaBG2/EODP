@@ -124,7 +124,11 @@ class detectionPhase(initIsm):
         :return: toa in electrons
         """
         #TODO
-        self.ismConfig.FWC
+        toae = toa * QE    # convert photons to electrons
+
+        FWC = self.ismConfig.FWC    # Full Well Capacity
+        toae = np.minimum(toae, FWC)   # saturation of pixels over the FWC
+
         return toae
 
     def badDeadPixels(self, toa,bad_pix,dead_pix,bad_pix_red,dead_pix_red):
