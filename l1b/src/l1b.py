@@ -64,6 +64,7 @@ class l1b(initL1b):
         """
         #TODO
         toa = (toa - eq_add) / eq_mult
+
         return toa
 
     def restoration(self,toa,gain):
@@ -74,10 +75,22 @@ class l1b(initL1b):
         :return: TOA in radiances [mW/sr/m2]
         """
         #TODO
-        self.logger.debug('Sanity check. TOA in radiances after gain application ' + str(toa[1,-1]) + ' [mW/m2/sr]')
         toa = toa * gain
+        self.logger.debug('Sanity check. TOA in radiances after gain application ' + str(toa[1,-1]) + ' [mW/m2/sr]')
+
         return toa
 
     def plotL1bToa(self, toa_l1b, outputdir, band):
         #TODO
         a=1 # dummy
+        mid_alt = int(toa_l1b.shape[0] / 2)    # select central ALT position
+
+        fig, ax = plt.subplots(figsize=(14, 7))    # plot L1B radiance along ACT
+        ax.plot(toa_l1b[mid_alt, :], color = 'red', label = 'TOA L1B')
+        ax.set_title("Equalization and restoration for " + band)
+        ax.set_xlabel("ACT pixel [-]")
+        ax.set_ylabel("TOA [mW/m2/sr]")
+        ax.grid(True)
+        ax.legend()
+        fig.savefig(outputdir + "/l1b_toa" + band + ".png", dpi = 300, bbox_inches = 'tight')
+        plt.close(fig)
