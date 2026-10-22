@@ -8,6 +8,7 @@ import logging
 import os
 import contextlib
 import io
+import mgrs
 from scipy.spatial import cKDTree
 
 
@@ -215,6 +216,34 @@ perimeter_lon = np.concatenate((
 first_band = bands[0]
 _, lat_l1c, lon_l1c = products[first_band]
 
+
+# Check whether the four VNIR bands share the same L1C grid
+reference_coords = set(
+    zip(np.round(lat_l1c, 6), np.round(lon_l1c, 6))
+)
+
+same_grid = True
+
+for band in bands:
+    _, lat_band, lon_band = products[band]
+
+    band_coords = set(
+        zip(np.round(lat_band, 6), np.round(lon_band, 6))
+    )
+
+    passed = band_coords == reference_coords
+    same_grid = same_grid and passed
+
+    logger.info(
+        band + " - L1C geolocation consistency: "
+        + ("PASS" if passed else "FAIL")
+    )
+
+logger.info(
+    "COMMON L1C GRID: " + ("PASS" if same_grid else "FAIL")
+)
+
+
 fig, ax = plt.subplots(figsize=(12, 7))
 
 ax.plot(perimeter_lon, perimeter_lat, color="black", linewidth=1.5, label="L1B")
@@ -312,3 +341,131 @@ ax2.legend(loc="upper right", fontsize=8)
 plt.tight_layout()
 
 save_figure(fig, "gsd_distribution.png")
+
+
+
+
+# ---------------------------------------------------------------------
+# TEST 4 - ACT AND ALT GSD PROFILES
+# ---------------------------------------------------------------------
+
+from pyproj import Transformer
+
+logger.info("---------------------------------------------------------------------")
+logger.info("TEST 4 - ACT AND ALT GSD PROFILES")
+logger.info("---------------------------------------------------------------------")
+
+# L1B: directional GSD profiles
+l1b_alt_profile = np.mean(
+    haversine(
+        lat_l1b[:-1, :], lon_l1b[:-1, :],
+        lat_l1b[1:, :], lon_l1b[1:, :]
+    ),
+    axis=1
+)
+
+l1b_act_profile = np.mean(
+    haversine(
+        lat_l1b[:, :-1], lon_l1b[:, :-1],
+        lat_l1b[:, 1:], lon_l1b[:, 1:]
+    ),
+    axis=0
+)
+
+# L1C: recover the regular MGRS grid using UTM coordinates
+_, lat_l1c, lon_l1c = products[bands[0]]
+
+zone = int((np.mean(lon_l1c) + 180) / 6) + 1
+epsg = (32600 if np.mean(lat_l1c) >= 0 else 32700) + zone
+
+transformer = Transformer.from_crs(
+    "EPSG:4326", f"EPSG:{epsg}", always_xy=True
+)
+
+eastings, northings = transformer.transform(lon_l1c, lat_l1c)
+
+# The L1C grid spacing is 100 m
+spacing = 100.0
+
+col = np.rint((eastings - np.min(eastings)) / spacing).astype(int)
+row = np.rint((northings - np.min(northings)) / spacing).astype(int)
+
+grid = {}
+for i, (r, c) in enumerate(zip(row, col)):
+    if (r, c) in grid:
+        raise ValueError("Duplicate L1C grid cell detected.")
+    grid[(r, c)] = i
+
+# Find actual neighbouring grid points
+east_distances = {}
+north_distances = {}
+
+for (r, c), i in grid.items():
+
+    right = grid.get((r, c + 1))
+    above = grid.get((r + 1, c))
+
+    if right is not None:
+        distance = haversine(
+            lat_l1c[i], lon_l1c[i],
+            lat_l1c[right], lon_l1c[right]
+        )
+        east_distances.setdefault(c, []).append(float(distance))
+
+    if above is not None:
+        distance = haversine(
+            lat_l1c[i], lon_l1c[i],
+            lat_l1c[above], lon_l1c[above]
+        )
+        north_distances.setdefault(r, []).append(float(distance))
+
+if not east_distances or not north_distances:
+    raise ValueError("No adjacent L1C grid points found.")
+
+east_positions = sorted(east_distances)
+north_positions = sorted(north_distances)
+
+l1c_east_profile = np.array([
+    np.mean(east_distances[k]) for k in east_positions
+])
+
+l1c_north_profile = np.array([
+    np.mean(north_distances[k]) for k in north_positions
+])
+
+# Plot
+fig, axes = plt.subplots(2, 2, figsize=(13, 8))
+
+axes[0, 0].plot(l1b_act_profile)
+axes[0, 0].set_title("L1B - ACT")
+
+axes[0, 1].plot(l1b_alt_profile)
+axes[0, 1].set_title("L1B - ALT")
+
+axes[1, 0].plot(east_positions, l1c_east_profile)
+axes[1, 0].set_title("L1C - MGRS Easting")
+
+axes[1, 1].plot(north_positions, l1c_north_profile)
+axes[1, 1].set_title("L1C - MGRS Northing")
+
+for ax in axes.flat:
+    ax.set_xlabel("Grid position")
+    ax.set_ylabel("GSD [m]")
+    ax.grid(True, alpha=0.3)
+    ax.ticklabel_format(axis="y", style="plain", useOffset=False)
+
+plt.tight_layout()
+save_figure(fig, "gsd_profiles.png")
+
+logger.info(
+    f"L1B ACT mean = {np.mean(l1b_act_profile):.3f} m"
+)
+logger.info(
+    f"L1B ALT mean = {np.mean(l1b_alt_profile):.3f} m"
+)
+logger.info(
+    f"L1C Easting mean = {np.mean(l1c_east_profile):.3f} m"
+)
+logger.info(
+    f"L1C Northing mean = {np.mean(l1c_north_profile):.3f} m"
+)

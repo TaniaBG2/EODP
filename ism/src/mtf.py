@@ -72,7 +72,8 @@ class mtf:
 
         # Calculate the System MTF
         self.logger.debug("Calculation of the Sysmtem MTF by multiplying the different contributors")
-        Hsys = 1 # dummy
+        # Hsys = 1 # dummy
+        Hsys = Hdiff * Hdefoc * Hwfe * Hdet * Hsmear * Hmotion
 
         # Plot cuts ACT/ALT of the MTF
         self.plotMtf(Hdiff, Hdefoc, Hwfe, Hdet, Hsmear, Hmotion, Hsys, nlines, ncolumns, fnAct, fnAlt, directory, band)
@@ -126,6 +127,10 @@ class mtf:
         :return: diffraction MTF
         """
         #TODO
+        Hdiff = np.zeros(fr2D.shape)
+        mask = (fr2D >= 0) & (fr2D < 1)
+        Hdiff[mask] = (2 / np.pi) * (np.arccos(fr2D[mask]) - fr2D[mask] * np.sqrt(1 - fr2D[mask] ** 2))
+
         return Hdiff
 
 
@@ -139,6 +144,12 @@ class mtf:
         :return: Defocus MTF
         """
         #TODO
+        x = np.pi * defocus * fr2D * (1 - fr2D)
+        J1 = x / 2 - x ** 3 / 16 + x ** 5 / 384 - x ** 7 / 18432
+        Hdefoc = np.ones_like(x, dtype=float)
+        mask = (x != 0)
+        Hdefoc[mask] = 2 * J1[mask] / x[mask]
+
         return Hdefoc
 
     def mtfWfeAberrations(self, fr2D, lambd, kLF, wLF, kHF, wHF):
@@ -153,6 +164,9 @@ class mtf:
         :return: WFE Aberrations MTF
         """
         #TODO
+        a = kLF * (wLF ** 2 / lambd ** 2) + kHF * (wHF ** 2 / lambd ** 2)
+        Hwfe = np.exp(-fr2D * (1 - fr2D) * a)
+
         return Hwfe
 
     def mtfDetector(self,fn2D):
@@ -162,6 +176,8 @@ class mtf:
         :return: detector MTF
         """
         #TODO
+        Hdet = np.abs(np.sinc(fn2D))
+
         return Hdet
 
     def mtfSmearing(self, fnAlt, ncolumns, ksmear):
@@ -173,6 +189,11 @@ class mtf:
         :return: Smearing MTF
         """
         #TODO
+        dummy = np.sinc(fnAlt * ksmear)
+        Hsmear = np.zeros((fnAlt.shape[0], ncolumns))
+        for i in range(ncolumns):
+            Hsmear[:, i] = dummy
+
         return Hsmear
 
     def mtfMotion(self, fn2D, kmotion):
@@ -183,6 +204,8 @@ class mtf:
         :return: detector MTF
         """
         #TODO
+        Hmotion = np.sinc(fn2D * kmotion)
+
         return Hmotion
 
     def plotMtf(self,Hdiff, Hdefoc, Hwfe, Hdet, Hsmear, Hmotion, Hsys, nlines, ncolumns, fnAct, fnAlt, directory, band):
@@ -204,5 +227,51 @@ class mtf:
         :return: N/A
         """
         #TODO
+        import os
 
+        os.makedirs(directory, exist_ok=True)
 
+        halfAct = ncolumns // 2
+        halfAlt = nlines // 2
+
+        mtfs = {'Diffraction': Hdiff, 'Defocus': Hdefoc, 'WFE aberrations': Hwfe, 'Detector': Hdet, 'Smearing': Hsmear, 'Motion blur': Hmotion, 'System MTF': Hsys}
+
+        fig, ax = plt.subplots(figsize=(9, 6))
+
+        for name, H in mtfs.items():
+            ax.plot(fnAct[halfAct:], H[halfAlt, halfAct:], label=name, linewidth=2 if name == 'System MTF' else 1.2)
+
+        ax.set_title(f'MTF - ACT direction - {band}')
+        ax.set_xlabel('Normalised spatial frequency [-]')
+        ax.set_ylabel('MTF')
+        ax.grid(True)
+        ax.legend()
+        fig.tight_layout()
+        fig.savefig(os.path.join(directory, f'graph_mtf_act_{band}.png'), dpi=200)
+        plt.close(fig)
+        fig, ax = plt.subplots(figsize=(9, 6))
+
+        for name, H in mtfs.items():
+            ax.plot(fnAlt[halfAlt:], H[halfAlt:, halfAct], label=name, linewidth=2 if name == 'System MTF' else 1.2)
+
+        ax.set_title(f'MTF - ALT direction - {band}')
+        ax.set_xlabel('Normalised spatial frequency [-]')
+        ax.set_ylabel('MTF')
+        ax.grid(True)
+        ax.legend()
+        fig.tight_layout()
+
+        fig.savefig(os.path.join(directory, f'graph_mtf_alt_{band}.png'), dpi=200)
+        plt.close(fig)
+
+        writeMat(directory, "Hsys", Hsys)
+        writeMat(directory, "Hdet", Hdet)
+
+        nyquist_file = os.path.join(directory, 'mtf_nyquist.txt')
+
+        mode = 'w' if band == 'VNIR-0' else 'a'
+
+        with open(nyquist_file, mode) as f:
+            f.write(f'{band}\n')
+            f.write(f'mtf_nyquist Act = {Hsys[halfAlt, 0]}\n')
+            f.write(f'mtf_nyquist Alt = {Hsys[0, halfAct]}\n')
