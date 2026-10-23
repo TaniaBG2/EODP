@@ -240,8 +240,7 @@ for band in bands:
     )
 
 logger.info(
-    "COMMON L1C GRID: " + ("PASS" if same_grid else "FAIL")
-)
+    "COMMON L1C GRID: " + ("PASS" if same_grid else "FAIL"))
 
 
 fig, ax = plt.subplots(figsize=(12, 7))
